@@ -1,8 +1,6 @@
 ﻿using GK_Assessment.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using OpenQA.Selenium;
+using System;
 using System.Data;
 
 namespace GK_Assessment.TestClasses
