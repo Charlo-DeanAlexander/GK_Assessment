@@ -14,6 +14,14 @@ namespace GK_Assessment.UnitTests
             Selenium_Utilities.CreateDriver();
         }
 
+        /**
+        This test will perform the following objectives:
+        1. Navigate to the protractor app website: "http://www.way2automation.com/angularjs-protractor/webtables/"
+        2. Add a user.
+        3. Validate that the user has been created.
+        4. Delete the created user.
+        **/
+
         [Test]
         public void WebAutomationScenario()
         {

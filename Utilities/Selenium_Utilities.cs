@@ -46,7 +46,7 @@ namespace GK_Assessment.Utilities
         /// </summary>
         /// <param name="Selector">This by selector will be validated.</param>
         /// <param name="TimeOut">Optional parameter which specifies the timeout period for searching for the provided by selector.</param>
-        /// <returns></returns>
+        /// <returns>Returns an IWebElement object if the expected element is found</returns>
         public static IWebElement ValidateElementExists(By Selector, int TimeOut = 5)
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(TimeOut));
