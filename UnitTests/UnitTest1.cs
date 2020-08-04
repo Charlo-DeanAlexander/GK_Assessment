@@ -1,4 +1,8 @@
+using GK_Assessment.TestClasses;
+using GK_Assessment.Utilities;
 using NUnit.Framework;
+using System;
+using System.Data;
 
 namespace GK_Assessment.UnitTests
 {
@@ -7,12 +11,24 @@ namespace GK_Assessment.UnitTests
         [SetUp]
         public void Setup()
         {
+            Selenium_Utilities.CreateDriver();
         }
 
         [Test]
-        public void Test1()
+        public void WebAutomationScenario()
         {
-            Assert.Pass();
+            DataTable TestData = CSV_Utilities.CreateTestDataTable(AppDomain.CurrentDomain.BaseDirectory + @"\..\..\..\TestData\WebAutomationScenario.csv");
+
+            ProtractorApp_TestClass.NavigateToProtractorApp();
+            ProtractorApp_TestClass.AddUsers(TestData);
+            ProtractorApp_TestClass.ValidateUsersExist(TestData);
+            ProtractorApp_TestClass.DeleteUsers(TestData);
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            Selenium_Utilities.ShutdownDriver();
         }
     }
 }
