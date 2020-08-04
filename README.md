@@ -1,1 +1,1 @@
-﻿#GK_Assessment
+# GK_Assessment
