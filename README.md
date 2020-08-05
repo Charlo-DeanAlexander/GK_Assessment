@@ -24,6 +24,9 @@ Please see the below instructions to clone this repository and execute the code 
 * Visual Studio (Preferred IDE used within development)
 * .NET Core 3.1
 * .NET Framework 4.7
+* Appium
+* Android SDK
+* Java JDK 1.8.0
 
 ### Cloning the repository:
 
@@ -36,10 +39,12 @@ Please see the below instructions to clone this repository and execute the code 
 1. Open the Test Explorer.
 2. Use the test explorer to execute any of the tests located within the project.
 
-### Test Execution Notes:
+### Mobile Test Execution Notes:
 
 To execute the "MobileAutomationScenario" test, a Device ID and Platform Version (OS) is required as parameters to instantiate the WebDriver used to control the device.
 A physical device was used to test this unit test within development.
+
+Note: Ensure you have launched an appium server before executing a mobile test.
 
 ## Project Packages:
 
