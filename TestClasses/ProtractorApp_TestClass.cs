@@ -37,9 +37,9 @@ namespace GK_Assessment.TestClasses
         {
             try
             {
-                Selenium_Utilities.NavigateToPage("http://www.way2automation.com/angularjs-protractor/webtables/");
+                Driver_Utilities.NavigateToPage("http://www.way2automation.com/angularjs-protractor/webtables/");
 
-                Selenium_Utilities.ValidateElementExists(UserTable);
+                Driver_Utilities.ValidateElementExists(UserTable);
             }
             catch (Exception e)
             {
@@ -56,24 +56,24 @@ namespace GK_Assessment.TestClasses
                 foreach (DataRow UserRow in UsersTable.Rows)
                 {
                     //Open add user menu:
-                    Selenium_Utilities.ClickElement(AddUserButton);
+                    Driver_Utilities.ClickElement(AddUserButton);
 
                     //Enter user details:
-                    Selenium_Utilities.EnterText(FirstNameInput, UserRow["FirstName"].ToString());
-                    Selenium_Utilities.EnterText(LastNameInput, UserRow["LastName"].ToString());
+                    Driver_Utilities.EnterText(FirstNameInput, UserRow["FirstName"].ToString());
+                    Driver_Utilities.EnterText(LastNameInput, UserRow["LastName"].ToString());
 
                     //Generate GUID and append first 8 characters to username for a unique username:
                     Guid guid = Guid.NewGuid();
-                    Selenium_Utilities.EnterText(UserNameInput, UserRow["UserName"].ToString() + "-" + guid.ToString().Substring(0, 7));
-                    Selenium_Utilities.EnterText(PasswordInput, UserRow["Password"].ToString());
+                    Driver_Utilities.EnterText(UserNameInput, UserRow["UserName"].ToString() + "-" + guid.ToString().Substring(0, 7));
+                    Driver_Utilities.EnterText(PasswordInput, UserRow["Password"].ToString());
 
                     switch (UserRow["Customer"].ToString().ToLower())
                     {
                         case "company aaa":
-                            Selenium_Utilities.ClickElement(CompanyAAARadioButton);
+                            Driver_Utilities.ClickElement(CompanyAAARadioButton);
                             break;
                         case "company bbb":
-                            Selenium_Utilities.ClickElement(CompanyBBBRadioButton);
+                            Driver_Utilities.ClickElement(CompanyBBBRadioButton);
                             break;
                         default:
                             throw new Exception("Failed to select customer type");
@@ -82,24 +82,24 @@ namespace GK_Assessment.TestClasses
                     switch (UserRow["Role"].ToString().ToLower())
                     {
                         case "sales team":
-                            Selenium_Utilities.ClickElement(RoleDropDown(0));
+                            Driver_Utilities.ClickElement(RoleDropDown(0));
                             break;
                         case "customer":
-                            Selenium_Utilities.ClickElement(RoleDropDown(1));
+                            Driver_Utilities.ClickElement(RoleDropDown(1));
                             break;
                         case "admin":
-                            Selenium_Utilities.ClickElement(RoleDropDown(2));
+                            Driver_Utilities.ClickElement(RoleDropDown(2));
                             break;
                         default:
                             throw new Exception("Failed to select Role");
                     }
 
-                    Selenium_Utilities.EnterText(EmailInput, UserRow["EMail"].ToString());
-                    Selenium_Utilities.EnterText(CellPhoneInput, UserRow["CellPhone"].ToString());
+                    Driver_Utilities.EnterText(EmailInput, UserRow["EMail"].ToString());
+                    Driver_Utilities.EnterText(CellPhoneInput, UserRow["CellPhone"].ToString());
 
                     Console.WriteLine("Entered user details.");
 
-                    Selenium_Utilities.ClickElement(SaveButton);
+                    Driver_Utilities.ClickElement(SaveButton);
                 }
 
                 Console.WriteLine("Created user account(s)");
@@ -120,16 +120,16 @@ namespace GK_Assessment.TestClasses
                 foreach (DataRow UserRow in UsersTable.Rows)
                 {
                     //Search user by username before validation:
-                    Selenium_Utilities.EnterText(SearchInput, UserRow["UserName"].ToString());
+                    Driver_Utilities.EnterText(SearchInput, UserRow["UserName"].ToString());
 
                     //Validate User:
-                    Selenium_Utilities.ValidateElementExists(TableCellValue(UserRow["FirstName"].ToString()));
-                    Selenium_Utilities.ValidateElementExists(TableCellValue(UserRow["LastName"].ToString()));
-                    Selenium_Utilities.ValidateElementExists(TableCellValue(UserRow["UserName"].ToString()));
-                    Selenium_Utilities.ValidateElementExists(TableCellValue(UserRow["Customer"].ToString()));
-                    Selenium_Utilities.ValidateElementExists(TableCellValue(UserRow["Role"].ToString()));
-                    Selenium_Utilities.ValidateElementExists(TableCellValue(UserRow["EMail"].ToString()));
-                    Selenium_Utilities.ValidateElementExists(TableCellValue(UserRow["CellPhone"].ToString()));
+                    Driver_Utilities.ValidateElementExists(TableCellValue(UserRow["FirstName"].ToString()));
+                    Driver_Utilities.ValidateElementExists(TableCellValue(UserRow["LastName"].ToString()));
+                    Driver_Utilities.ValidateElementExists(TableCellValue(UserRow["UserName"].ToString()));
+                    Driver_Utilities.ValidateElementExists(TableCellValue(UserRow["Customer"].ToString()));
+                    Driver_Utilities.ValidateElementExists(TableCellValue(UserRow["Role"].ToString()));
+                    Driver_Utilities.ValidateElementExists(TableCellValue(UserRow["EMail"].ToString()));
+                    Driver_Utilities.ValidateElementExists(TableCellValue(UserRow["CellPhone"].ToString()));
                 }
 
                 Console.WriteLine("Validated all user(s) have been created.");
@@ -150,11 +150,11 @@ namespace GK_Assessment.TestClasses
                 foreach (DataRow UserRow in UsersTable.Rows)
                 {
                     //Search user by username before deletion:
-                    Selenium_Utilities.EnterText(SearchInput, UserRow["UserName"].ToString());
+                    Driver_Utilities.EnterText(SearchInput, UserRow["UserName"].ToString());
 
                     //Delete user:
-                    Selenium_Utilities.ClickElement(DeleteIcon);
-                    Selenium_Utilities.ClickElement(ConfirmationDialog_OK);
+                    Driver_Utilities.ClickElement(DeleteIcon);
+                    Driver_Utilities.ClickElement(ConfirmationDialog_OK);
                 }
 
                 Console.WriteLine("Deleted all user(s) that has been created.");

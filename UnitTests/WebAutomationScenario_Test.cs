@@ -11,7 +11,7 @@ namespace GK_Assessment.UnitTests
         [SetUp]
         public void Setup()
         {
-            Selenium_Utilities.CreateDriver();
+            Driver_Utilities.CreateDriver();
         }
 
         /**
@@ -36,7 +36,7 @@ namespace GK_Assessment.UnitTests
         [TearDown]
         public void TearDown()
         {
-            Selenium_Utilities.ShutdownDriver();
+            Driver_Utilities.ShutdownDriver();
         }
     }
 }
