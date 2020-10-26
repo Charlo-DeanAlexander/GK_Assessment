@@ -1,12 +1,9 @@
-﻿using System;
-using MongoDB.Bson.Serialization.Conventions;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Appium.Service.Options;
+using System;
 
 namespace GK_Assessment.Utilities
 {
