@@ -11,7 +11,7 @@ namespace GK_Assessment.UnitTests
         [SetUp]
         public void Setup()
         {
-            Driver_Utilities.CreateDriver();
+            //Driver_Utilities.CreateDriver();
         }
 
         /**
@@ -25,18 +25,18 @@ namespace GK_Assessment.UnitTests
         [Test]
         public void WebAutomationScenario()
         {
-            DataTable TestData = CSV_Utilities.CreateTestDataTable(AppDomain.CurrentDomain.BaseDirectory + @"\..\..\..\TestData\WebAutomationScenario.csv");
+            //DataTable TestData = CSV_Utilities.CreateTestDataTable(AppDomain.CurrentDomain.BaseDirectory + @"\..\..\..\TestData\WebAutomationScenario.csv");
 
-            ProtractorApp_TestClass.NavigateToProtractorApp();
-            ProtractorApp_TestClass.AddUsers(TestData);
-            ProtractorApp_TestClass.ValidateUsersExist(TestData);
-            ProtractorApp_TestClass.DeleteUsers(TestData);
+            //ProtractorApp_TestClass.NavigateToProtractorApp();
+            //ProtractorApp_TestClass.AddUsers(TestData);
+            //ProtractorApp_TestClass.ValidateUsersExist(TestData);
+            //ProtractorApp_TestClass.DeleteUsers(TestData);
         }
 
         [TearDown]
         public void TearDown()
         {
-            Driver_Utilities.ShutdownDriver();
+            //Driver_Utilities.ShutdownDriver();
         }
     }
 }
