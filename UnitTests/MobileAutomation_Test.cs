@@ -11,7 +11,7 @@ namespace GK_Assessment.UnitTests
         [SetUp]
         public void Setup()
         {
-            //Driver_Utilities.CreateAndroidDriver("R58N2255B3M", "10");
+            Driver_Utilities.CreateAndroidDriver("R58N2255B3M", "10");
         }
 
         /**
@@ -26,15 +26,15 @@ namespace GK_Assessment.UnitTests
         [Test]
         public void MobileAutomationScenario()
         {
-            //UniversalMusicPlayer_TestClass.NavigateToRockCatgory();
-            //UniversalMusicPlayer_TestClass.ClickOnSongOption("Hey Sailor");
-            //UniversalMusicPlayer_TestClass.ValidateSongLength("03:13");
+            UniversalMusicPlayer_TestClass.NavigateToRockCatgory();
+            UniversalMusicPlayer_TestClass.ClickOnSongOption("Hey Sailor");
+            UniversalMusicPlayer_TestClass.ValidateSongLength("03:13");
         }
 
         [TearDown]
         public void TearDown()
         {
-            //Driver_Utilities.ShutdownDriver();
+            Driver_Utilities.ShutdownDriver();
         }
     }
 }
